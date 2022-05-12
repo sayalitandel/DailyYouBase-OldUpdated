@@ -1,3 +1,5 @@
+import { useNavigation } from '@react-navigation/native'
+
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
@@ -11,10 +13,11 @@ import {
 } from "react-native";
 
 const Login = () => {
+  const navigation = useNavigation();  
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Notes')}>
           <Text style={styles.buttonText}>Notes</Text>
         </TouchableOpacity>
 

@@ -14,7 +14,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Login = () => {
+const Home = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
@@ -32,7 +32,7 @@ const Login = () => {
         </View>
     )
 }
-export default Login
+export default Home
 
 const styles = StyleSheet.create({
   container: {

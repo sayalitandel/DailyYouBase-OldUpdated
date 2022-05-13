@@ -1,10 +1,12 @@
 import React from 'react';
+import Toast from 'react-native-toast-message';
 import Home from './Screens/Home';
 import Signup from './Screens/Signup';
 import Login from './Screens/Login';
 import Modules from './Screens/Modules';
 import Notes from './Screens/Notes';
 import NewScreen from './Screens/NewScreen';
+import Reminder from './Screens/Reminder';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
@@ -18,7 +20,9 @@ export default function App() {
         <Stack.Screen  name="Modules" component={Modules} />
         <Stack.Screen  name="Notes" component={Notes} options={{headerStyle: {backgroundColor: '#8BE3E3'}, headerTintColor: '#fff'}} />
         <Stack.Screen  name="NewScreen" component={NewScreen} options={{headerStyle: {backgroundColor: '#8BE3E3'},headerTintColor: '#fff'}} />
+        <Stack.Screen  name="Reminder" component={Reminder} />
       </Stack.Navigator>
+      <Toast ref={(ref) => Toast.setRef(ref)} />
     </NavigationContainer>
   );
 }

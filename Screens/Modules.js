@@ -42,7 +42,7 @@ const Login = () => {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Reminder</Text>
+          <Text style={styles.buttonText}  onPress={()=>navigation.navigate('Reminder')}>Reminder</Text>
         </TouchableOpacity>
       </View>
     </View>

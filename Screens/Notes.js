@@ -1,4 +1,4 @@
-//import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
@@ -13,14 +13,15 @@ import {
 } from "react-native";
 
 const Notes = () => {
-  //const navigation = useNavigation();
+  const navigation = useNavigation();  
   return (
     <View style={styles.container}>
-   
 
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>LOGIN</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('NewScreen')}>
+          <Text style={styles.buttonText}>Add Notes</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -34,36 +35,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  image: {
-    width: 280,
-    height: 280,
-    marginBottom: 40,
+  buttonContainer: {
+    flexDirection: "row",
   },
-
-  inputView: {
-    backgroundColor: "#8BE3E3",
-    borderRadius: 30,
-    width: "70%",
-    height: 45,
-    marginBottom: 20,
-
-    alignItems: "center",
-  },
-
-  TextInput: {
+  button: {
     height: 50,
-    flex: 1,
-    padding: 10,
-    marginLeft: 20,
-  },
-
-  loginBtn: {
-    width: "80%",
-    borderRadius: 25,
-    height: 50,
+    width: 90,
+    backgroundColor: "green",
+    borderColor: "white",
+    borderWidth: 2,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#8BE3E3",
+    margin: 10,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 10,
+    textAlign: "center",
   },
 });
